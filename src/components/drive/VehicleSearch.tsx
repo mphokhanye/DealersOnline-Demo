@@ -856,20 +856,20 @@ export function VehicleSearch({ query, answers, na, prequalified, onNav }: Vehic
               </div>
 
               {/* Action buttons: Fuel cost, Reduce price, Save car (matches Browse list) */}
-              <div className="flex gap-1.5 mb-3 flex-wrap">
-                <button onClick={() => openModal("fuel", cur)} className="bg-warning-bg border-none text-warning text-[11px] font-semibold px-3 py-1.5 rounded-full cursor-pointer flex items-center gap-1">
-                  <Fuel size={11} /> Fuel cost
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                <button onClick={() => openModal("fuel", cur)} className="bg-warning-bg border-[1.5px] border-warning/30 text-warning text-xs font-semibold px-2 py-2.5 rounded-lg cursor-pointer flex items-center justify-center gap-1.5 hover:bg-warning/20 transition-colors">
+                  <Fuel size={13} /> Fuel cost
                 </button>
-                <button onClick={() => openModal("reduce", cur)} className="bg-success-bg border-none text-success text-[11px] font-semibold px-3 py-1.5 rounded-full cursor-pointer flex items-center gap-1">
-                  <Tag size={11} /> Reduce price
+                <button onClick={() => openModal("reduce", cur)} className="bg-success-bg border-[1.5px] border-success/30 text-success text-xs font-semibold px-2 py-2.5 rounded-lg cursor-pointer flex items-center justify-center gap-1.5 hover:bg-success/20 transition-colors">
+                  <Tag size={13} /> Reduce price
                 </button>
                 <button
                   onClick={() => toggleSave(cur.id)}
-                  className={`border-none text-[11px] font-semibold px-3 py-1.5 rounded-full cursor-pointer flex items-center gap-1 ${
-                    saved.includes(cur.id) ? "bg-terra text-primary-foreground" : "bg-terra/10 text-terra"
+                  className={`border-[1.5px] text-xs font-semibold px-2 py-2.5 rounded-lg cursor-pointer flex items-center justify-center gap-1.5 transition-colors ${
+                    saved.includes(cur.id) ? "bg-terra text-primary-foreground border-terra" : "bg-terra/10 text-terra border-terra/30 hover:bg-terra/20"
                   }`}
                 >
-                  <Heart size={11} className={saved.includes(cur.id) ? "fill-current" : ""} /> {saved.includes(cur.id) ? "Saved" : "Save car"}
+                  <Heart size={13} className={saved.includes(cur.id) ? "fill-current" : ""} /> {saved.includes(cur.id) ? "Saved" : "Save car"}
                 </button>
               </div>
 
