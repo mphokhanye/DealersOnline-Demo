@@ -37,8 +37,9 @@ const Index = () => {
     case "vehicleSearch":
       return <VehicleSearch query={ctx.query || ""} answers={ctx.answers || {}} na={ctx.na || {}} prequalified={ctx.prequalified || false} monthly={ctx.monthly} onNav={nav} />;
     case "compareIntro":
-    case "compareSelect":
       return <CompareIntro onNav={nav} />;
+    case "compareSelect":
+      return <CompareIntro onNav={nav} initialStep="select" />;
     case "compare":
       return <QualityComparison onNav={nav} />;
     default:
