@@ -33,7 +33,7 @@ const Index = () => {
     case "needs":
       return <NeedsAnalysis query={ctx.query || ""} answers={ctx.answers || {}} onNav={nav} />;
     case "prequal":
-      return <Prequal query={ctx.query || ""} answers={ctx.answers || {}} na={ctx.na || {}} onNav={nav} />;
+      return <Prequal query={ctx.query || ""} answers={ctx.answers || {}} na={ctx.na || {}} fromCompare={!!ctx.fromCompare} onNav={nav} />;
     case "vehicleSearch":
       return <VehicleSearch query={ctx.query || ""} answers={ctx.answers || {}} na={ctx.na || {}} prequalified={ctx.prequalified || false} monthly={ctx.monthly} onNav={nav} />;
     case "compareIntro":
