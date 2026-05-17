@@ -38,8 +38,8 @@ const ALL_CARS = [
   { id: "starlet", name: "Toyota Starlet", variant: "1.5 Xs Auto", price: "from R289,900", monthly: "R5,100 – R5,800/m", insurance: "R1,500 – R2,000/m", tag: "Reliable hatch" },
 ];
 
-export function CompareIntro({ onNav }: CompareIntroProps) {
-  const [step, setStep] = useState<Step>("needs1");
+export function CompareIntro({ onNav, initialStep = "needs1" }: CompareIntroProps) {
+  const [step, setStep] = useState<Step>(initialStep);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [picked, setPicked] = useState<string[]>([]);
 
