@@ -172,7 +172,7 @@ export function Prequal({ query, answers, na, fromCompare, onNav }: PrequalProps
                 onClick={() => {
                   const m = parseInt(maxMonthly);
                   if (!m || m <= 0) return;
-                  if (fromCompare) onNav("compare", { prequalified: true, monthly: m });
+                  if (fromCompare) onNav("compareSelect", { prequalified: true, monthly: m });
                   else onNav("vehicleSearch", { query, answers, na, prequalified: true, monthly: m });
                 }}
                 disabled={!maxMonthly || parseInt(maxMonthly) <= 0}
